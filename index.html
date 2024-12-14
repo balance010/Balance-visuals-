@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello Balance with Transition</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #black;
+      margin: 0;
+    }
+
+    .hello-world {
+      font-size: 4rem;
+      color: #135;
+      opacity: 0;
+      transform: translateY(-50px);
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+
+    /* Apply the transition once the page loads */
+    body.loaded .hello-world {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body> 
+  <div class="hello-world">Hello, World!</div>
+
+  <script>
+    // Add the 'loaded' class after the page loads to trigger the transition
+    window.onload = function() {
+      document.body.classList.add('loaded');
+    }
+  </script>
+
+</body>
+</html>
+
